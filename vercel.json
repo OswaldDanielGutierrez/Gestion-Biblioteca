@@ -1,24 +1,4 @@
 {
   "version": 2,
-  "installCommand": "npm install --force",
-  "builds": [
-    {
-      "src": "index.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "dist/**",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/",
-      "dest": "dist/index.html"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "index.js"
-    }
-  ]
+  "buildCommand": "npm run vercel-build"
 }
