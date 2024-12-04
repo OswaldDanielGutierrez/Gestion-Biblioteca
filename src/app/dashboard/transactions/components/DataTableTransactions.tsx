@@ -32,7 +32,6 @@ import {
 } from "@/components/ui/table";
 
 import { columns } from "./ColumnDef";
-import { User } from "@/models/user";
 import { Transaction } from "@/models/transaction";
 
 type DataTableProps = {

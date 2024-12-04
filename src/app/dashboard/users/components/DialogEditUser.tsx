@@ -32,7 +32,7 @@ interface Props {
 export default function DialogEditUser({ user }: Props) {
   const [open, setOpen] = useState(false);
 
-  const { register, handleSubmit, setValue, watch } = useForm<User>({
+  const { register, handleSubmit, setValue } = useForm<User>({
     defaultValues: user,
   });
 

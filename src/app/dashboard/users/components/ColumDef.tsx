@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ColumnDef } from "@tanstack/react-table";
 import { ArrowUpDown, Trash2, UserRound } from "lucide-react";
-import { deleteBook } from "@/lib/books";
 import { User } from "@/models/user";
 import DialogEditUser from "./DialogEditUser";
 import { deleteUser } from "@/lib/users";

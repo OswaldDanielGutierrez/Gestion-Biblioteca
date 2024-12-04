@@ -2,7 +2,7 @@ import { supabase } from "@/lib/supabaseClient";
 
 export const uploadPhotoToStorage = async (file: File, userId: string) => {
   const filePath = `users/${userId}/${file.name}`;
-  const { data, error } = await supabase.storage
+  const { error } = await supabase.storage
     .from("avatars")
     .upload(filePath, file);
 

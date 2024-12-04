@@ -1,7 +1,6 @@
 import { View } from "../models";
 import {
   ArrowLeftRight,
-  ChartNoAxesCombined,
   SquareLibrary,
   User,
 } from "lucide-react";

@@ -14,7 +14,7 @@ export const addBook = async (bookData: Book) => {
       return;
     }
 
-    const { data: existingBook, error: isbnError } = await supabase
+    const { data: existingBook } = await supabase
       .from("books")
       .select("id")
       .eq("isbn", bookData.isbn);
@@ -24,7 +24,7 @@ export const addBook = async (bookData: Book) => {
       return;
     }
 
-    const { data, error } = await supabase.from("books").insert([bookData]);
+    const {error } = await supabase.from("books").insert([bookData]);
 
     if (error) {
       alert(`Error al crear el libro: ${error.message}`);
@@ -33,7 +33,6 @@ export const addBook = async (bookData: Book) => {
 
     alert("¡Libro creado exitosamente!");
 
-    return data;
   } catch (error: unknown) {
     if (error instanceof Error) {
       alert(`Error inesperado: ${error.message}`);

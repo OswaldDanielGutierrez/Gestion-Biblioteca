@@ -1,13 +1,12 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import React, { useEffect } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import banner from "@/assets/home/hero.jpg";
 
 export default function Dashboard() {
-  const router = useRouter();
 
   return (
     <section className="py-20 md:py-32 bg-gradient-to-b from-background to-background/80">

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ColumnDef } from "@tanstack/react-table";
+import { ColumnDef, Row } from "@tanstack/react-table";
 import { ArrowUpDown, Check, Images } from "lucide-react";
 import { Transaction } from "@/models/transaction";
 import { returnBook } from "@/lib/transactions";
@@ -48,18 +48,20 @@ const fetchUserDetails = async (userId: number) => {
   }
 };
 
+
+
 export const columns: ColumnDef<Transaction>[] = [
   {
     accessorKey: "photo",
     header: "",
-    cell: ({ row }: any) => {
-      const [isOpen, setIsOpen] = useState(false);
-      const [bookDetails, setBookDetails] = useState<{
+    cell: ({ row }: { row: Row<Transaction> }) => { // Línea 54
+      const [isOpen, setIsOpen] = useState(false); // Línea 55
+      const [bookDetails, setBookDetails] = useState<{ // Línea 56
         photo: string;
       } | null>(null);
 
       useEffect(() => {
-        const bookId = row.getValue("book_id");
+        const bookId = row.getValue("book_id") as number;
         fetchBookDetails(bookId).then((details) => setBookDetails(details));
       }, [row]);
 

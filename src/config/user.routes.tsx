@@ -1,5 +1,4 @@
-import { BookmarkCheck, BookOpen, NotepadText } from "lucide-react";
-import { ImBooks } from "react-icons/im";
+import { BookmarkCheck, BookOpen } from "lucide-react";
 
 export const userRoutes = [
   {

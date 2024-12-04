@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { Transaction } from "@/models/transaction";
-import { getAllTransactions, getUserTransactions } from "@/lib/transactions";
+import { getAllTransactions } from "@/lib/transactions";
 import { DataTableTransactions } from "./components/DataTableTransactions";
 
 export default function Transactions() {

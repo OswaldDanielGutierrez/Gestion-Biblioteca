@@ -2,11 +2,11 @@
 import React, { useEffect, useState } from "react";
 import { DataTableInventory } from "./components/DataTableInventory";
 import { Book } from "@/models/book";
-import { addBook, deleteBook, getBooks } from "@/lib/books";
+import { getBooks } from "@/lib/books";
 
 export default function Inventory() {
   const [books, setBooks] = useState<Book[]>([]);
-  const [newBook, setNewBook] = useState({
+  const [] = useState({
     id: 0,
     title: "",
     author: "",

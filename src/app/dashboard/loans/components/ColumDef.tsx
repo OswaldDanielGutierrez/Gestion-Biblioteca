@@ -19,14 +19,19 @@ const fetchBookDetails = async (bookId: number) => {
     }
 
     return data; // Esto debería devolver { name, photo }
-  } catch (error: any) {
-    console.error(
-      "Error consultando los datos de los libros:",
-      error.message || error
-    );
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      console.error(
+        "Error consultando los datos de los libros:",
+        error.message
+      );
+    } else {
+      console.error("Error desconocido:", error);
+    }
     return null;
   }
 };
+
 
 export const columns: ColumnDef<Transaction>[] = [
   {

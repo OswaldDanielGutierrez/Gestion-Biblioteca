@@ -12,7 +12,7 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { ArrowUpDown, ChevronDown, Trash2 } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -33,8 +33,6 @@ import {
 import DialogInventory from "./DialogInventory";
 
 import { Book } from "@/models/book";
-import DialogEditInventory from "./DialogEditInventary";
-import { deleteBook } from "@/lib/books";
 import { columns } from "./ColumnDef";
 
 type DataTableProps = {

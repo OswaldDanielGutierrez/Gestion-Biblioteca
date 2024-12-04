@@ -1,15 +1,5 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-  CommandSeparator,
-} from "../ui/command";
-import { Settings } from "lucide-react";
 import Link from "next/link";
 import NavUser from "./components/NavUser";
 import NavHeader from "./components/NavHeader";

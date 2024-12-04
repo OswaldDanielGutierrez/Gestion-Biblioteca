@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
-  DialogOverlay,
   DialogTitle,
 } from "@/components/ui/dialog";
 import { handleBorrow } from "@/lib/transactions";

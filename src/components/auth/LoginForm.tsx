@@ -57,8 +57,12 @@ export default function LoginForm() {
           .eq("id", userId)
           .single();
 
-        if (userError) throw new Error(userError.message);
-
+          if (userError) {
+            console.error("Error al obtener los datos del usuario:", userError.message);
+            setError(userError.message);
+            setLoading(false);
+            return;
+          }
         // Guardar en localStorage
         localStorage.setItem(
           "user",

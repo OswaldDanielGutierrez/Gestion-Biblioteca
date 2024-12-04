@@ -74,9 +74,12 @@ export default function RegisterForm() {
       alert(
         "Usuario registrado exitosamente, recuerde confirmar su correo electrónico"
       );
-    } catch (error: any) {
-      console.error(error);
-      alert(error.message);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        console.error(error.message);
+      } else {
+        console.error("Unexpected error", error);
+      }
     } finally {
       setLoading(false);
     }

@@ -1,13 +1,11 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import banner from "@/assets/home/hero.jpg";
 
 const Hero = () => {
-  const router = useRouter();
   return (
     <div className="grid grid-cols-2 h-[90vh] items-center gap-x-10">
       <div className="ml-20 font-monserrat">

@@ -5,7 +5,6 @@ import {
   CardHeader,
   CardFooter,
 } from "@/components/ui/card";
-import { Children } from "react";
 import AuthHeader from "./AuthHeader";
 import BackButton from "./BackButton";
 
