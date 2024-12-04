@@ -1,15 +1,16 @@
 import { Book } from "@/models/book";
 import { supabase } from "./supabaseClient";
 import { v4 as uuidv4 } from "uuid";
+
 export const addBook = async (bookData: Book) => {
   try {
-    const { data: genreData, error: genreError } = await supabase
+    const { data: genreData } = await supabase
       .from("genres")
       .select("id")
       .eq("id", bookData.genre_id)
       .single();
 
-    if (genreError || !genreData) {
+    if (!genreData) {
       alert("Error: El género especificado no existe.");
       return;
     }
@@ -24,7 +25,7 @@ export const addBook = async (bookData: Book) => {
       return;
     }
 
-    const {error } = await supabase.from("books").insert([bookData]);
+    const { error } = await supabase.from("books").insert([bookData]);
 
     if (error) {
       alert(`Error al crear el libro: ${error.message}`);
@@ -42,12 +43,13 @@ export const addBook = async (bookData: Book) => {
     throw error;
   }
 };
+
 export const uploadBookPhotoToStorage = async (file: File) => {
   const uniqueId = uuidv4();
   const fileExtension = file.name.split(".").pop();
   const filePath = `books/${uniqueId}.${fileExtension}`;
 
-  const { data, error } = await supabase.storage
+  const { error } = await supabase.storage
     .from("avatars")
     .upload(filePath, file);
 

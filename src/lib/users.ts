@@ -3,7 +3,7 @@ import { supabase } from "./supabaseClient";
 
 export const addUser = async (userData: User) => {
   try {
-    const { data: existingUser, error: userError } = await supabase
+    const { data: existingUser} = await supabase
       .from("users")
       .select("id")
       .eq("id", userData.id);
