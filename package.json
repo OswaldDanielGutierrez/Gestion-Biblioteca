@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint", 
-    "vercel-build": "npm install --force && next build"
+    "vercel-build": "npm install --force"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
